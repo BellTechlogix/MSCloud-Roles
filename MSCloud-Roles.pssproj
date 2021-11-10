@@ -28,8 +28,9 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
-    <Compile Include="AzureADRoles.ps1" />
     <Compile Include="O365-Roles.ps1" />
+    <Compile Include="AzureADRoles.ps1" />
+    <Compile Include="Create-Tabbed-RolesReport.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />

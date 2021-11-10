@@ -1,11 +1,17 @@
 ﻿<#
-	O365-Roles.ps1
+	AzureAD-Roles.ps1
 	Created By - Kristopher Roy
-	Created On - October 26 2021
+	Created On - Nov 10 2021
 	Modified On - 
 
-	This Script gathers information on idividual User Roles in O365 and then generates a report
+	This Script gathers information on idividual User Roles in AzureAD Tenets and then generates a report
 #>
+
+#Timestamp
+$runtime = Get-Date -Format "yyyyMM"
+
+#folder to store completed reports
+$rptfolder = "C:\Reports\GTIL\"
 
 #Connect to O365
 Connect-MsolService
@@ -38,9 +44,4 @@ ForEach($User in $Users)
 
 }
 
-#Export the list to a CSV
-$Users|export-csv c:\projects\gtil\MSO365Roles.csv -NoTypeInformation
-
-
-
-
+$Users|export-csv $rptFolder$runtime-MSO365Roles.csv -NoTypeInformation
